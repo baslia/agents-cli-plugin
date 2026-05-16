@@ -15,27 +15,27 @@ repositories {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(26))
     }
 }
 
 intellij {
-    version.set("2024.1")
+    version.set("2026.1.2")
     type.set("PY")
 }
 
 tasks {
     withType<JavaCompile> {
-        sourceCompatibility = "17"
-        targetCompatibility = "17"
+        sourceCompatibility = "26"
+        targetCompatibility = "26"
     }
 
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget = "26"
     }
 
     patchPluginXml {
-        sinceBuild.set("241")
-        untilBuild.set("241.*")
+        sinceBuild.set("261")
+        untilBuild.set("261.*")
     }
 }
