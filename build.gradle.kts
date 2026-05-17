@@ -15,7 +15,7 @@ repositories {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(26))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
@@ -26,12 +26,12 @@ intellij {
 
 tasks {
     withType<JavaCompile> {
-        sourceCompatibility = "26"
-        targetCompatibility = "26"
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
     }
 
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "26"
+        kotlinOptions.jvmTarget = "21"
     }
 
     patchPluginXml {
