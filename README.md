@@ -72,6 +72,20 @@ The workflow will:
 
 You can also trigger the workflow manually from **Actions -> Release plugin** and provide a `version` input.
 
+### Automated local release tagging + build
+
+Use the helper script to validate version/tag state, build the versioned ZIP, and create the git tag:
+
+```bash
+scripts/release-tag.sh 0.2.0
+```
+
+When you are ready to push the tag and trigger the GitHub release workflow:
+
+```bash
+scripts/release-tag.sh 0.2.0 --push
+```
+
 ## Publish to JetBrains Marketplace
 
 1. Build a versioned ZIP:
