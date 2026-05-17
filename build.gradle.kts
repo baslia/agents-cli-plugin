@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.adelbasli"
-version = "0.1.0"
+version = providers.gradleProperty("pluginVersion").orElse("0.1.0").get()
 
 repositories {
     mavenCentral()

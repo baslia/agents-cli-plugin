@@ -51,3 +51,19 @@ Install the ZIP from `build/distributions/` in a regular PyCharm instance:
 2. Click the gear icon
 3. Choose **Install Plugin from Disk**
 4. Select the generated ZIP
+
+## Versioned GitHub Releases
+
+The repository is configured to publish a GitHub Release with the plugin ZIP when you push a semantic version tag:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+The workflow will:
+1. Build with `-PpluginVersion=0.2.0`
+2. Produce `build/distributions/*.zip`
+3. Create a GitHub Release `v0.2.0` and attach the ZIP
+
+You can also trigger the workflow manually from **Actions -> Release plugin** and provide a `version` input.
