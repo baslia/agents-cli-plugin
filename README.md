@@ -67,3 +67,26 @@ The workflow will:
 3. Create a GitHub Release `v0.2.0` and attach the ZIP
 
 You can also trigger the workflow manually from **Actions -> Release plugin** and provide a `version` input.
+
+## Publish to JetBrains Marketplace
+
+1. Build a versioned ZIP:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export PATH="$JAVA_HOME/bin:$PATH"
+./gradlew -PpluginVersion=0.2.0 buildPlugin
+```
+
+2. Manual upload:
+   - Go to https://plugins.jetbrains.com
+   - Open your plugin in **My Plugins**
+   - Upload the ZIP from `build/distributions/`
+   - Publish the new version
+
+3. Optional CLI publish with token:
+
+```bash
+export ORG_GRADLE_PROJECT_intellijPublishToken=YOUR_MARKETPLACE_TOKEN
+./gradlew -PpluginVersion=0.2.0 publishPlugin
+```
