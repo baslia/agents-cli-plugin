@@ -1,9 +1,9 @@
-# AI Agents Panel (PyCharm Plugin)
+# AI CLIs (PyCharm Plugin)
 
-This plugin adds an **AI Agents** tool window on the right side of PyCharm with tabs for:
-- Copilot
-- Kiro
-- Claude
+This plugin adds an **AI CLIs** tool window on the right side of PyCharm with tabs for:
+- copilot
+- kiro-cli
+- claude-code
 
 Each tab opens the assistant website inside the IDE via JCEF, with:
 - **Reload** button
@@ -16,11 +16,36 @@ If JCEF is unavailable, the panel shows buttons to open each assistant in your d
 Use Gradle:
 
 ```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export PATH="$JAVA_HOME/bin:$PATH"
 ./gradlew runIde
 ```
+
+## Test the Plugin in Sandbox IDE
+
+1. Start the sandbox IDE with `./gradlew runIde`.
+2. In the sandbox PyCharm, open any project.
+3. Open **View -> Tool Windows -> AI CLIs** (or use the right sidebar icon).
+4. Verify the tool window renders and tabs are present:
+   - copilot
+   - kiro-cli
+   - claude-code
+5. Smoke-test interactions:
+   - Open/close the tool window
+   - Switch tabs
+   - Click **Reload**
+   - Click **Open External**
+6. Restart the sandbox IDE and confirm the plugin still loads.
 
 ## Build Plugin ZIP
 
 ```bash
 ./gradlew buildPlugin
 ```
+
+Install the ZIP from `build/distributions/` in a regular PyCharm instance:
+
+1. Open **Settings -> Plugins**
+2. Click the gear icon
+3. Choose **Install Plugin from Disk**
+4. Select the generated ZIP

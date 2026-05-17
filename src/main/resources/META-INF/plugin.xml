@@ -1,15 +1,15 @@
 <idea-plugin>
     <id>com.adelbasli.aiagents</id>
-    <name>AI Agents Panel</name>
+    <name>AI CLIs</name>
     <vendor email="adel@example.com">Adel Basli</vendor>
     <description>
-        Adds a right-side tool window with embedded AI coding assistant tabs (Copilot, Kiro, Claude).
+        Adds a right-side tool window with embedded AI CLI tabs (copilot, kiro-cli, claude-code).
     </description>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="AI Agents"
+        <toolWindow id="AI CLIs"
                     anchor="right"
                     factoryClass="com.adelbasli.aiagents.AgentAssistToolWindowFactory"
                     canCloseContents="false"/>

@@ -13,29 +13,23 @@ repositories {
     mavenCentral()
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-    }
-}
-
 intellij {
-    version.set("2026.1.2")
+    version.set("2024.1.7")
     type.set("PY")
 }
 
 tasks {
     withType<JavaCompile> {
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
+        sourceCompatibility = "17"
+        targetCompatibility = "17"
     }
 
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
+        kotlinOptions.jvmTarget = "17"
     }
 
     patchPluginXml {
-        sinceBuild.set("261")
-        untilBuild.set("261.*")
+        sinceBuild.set("241")
+        untilBuild.set("241.*")
     }
 }

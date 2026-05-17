@@ -19,9 +19,9 @@ class AgentAssistToolWindowFactory : ToolWindowFactory, DumbAware {
     private data class Assistant(val name: String, val url: String)
 
     private val assistants = listOf(
-        Assistant("Copilot", "https://github.com/features/copilot"),
-        Assistant("Kiro", "https://kiro.dev"),
-        Assistant("Claude", "https://claude.ai")
+        Assistant("copilot", "https://github.com/features/copilot"),
+        Assistant("kiro-cli", "https://kiro.dev"),
+        Assistant("claude-code", "https://claude.ai")
     )
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
