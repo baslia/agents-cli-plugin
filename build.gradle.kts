@@ -16,6 +16,7 @@ repositories {
 intellij {
     version.set("2024.1.7")
     type.set("PY")
+    plugins.set(listOf("org.jetbrains.plugins.terminal"))
 }
 
 tasks {

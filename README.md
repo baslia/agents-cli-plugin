@@ -5,11 +5,12 @@ This plugin adds an **AI CLIs** tool window on the right side of PyCharm with ta
 - kiro-cli
 - claude-code
 
-Each tab opens the assistant website inside the IDE via JCEF, with:
-- **Reload** button
-- **Open External** button
+Each tab opens a dedicated embedded bash terminal and runs the matching CLI command:
+- `copilot`
+- `kiro-cli`
+- `claude-code`
 
-If JCEF is unavailable, the panel shows buttons to open each assistant in your default browser.
+If a command is not available, the tab falls back to the assistant website in-app (or to an external browser button when JCEF is unavailable).
 
 ## Run in Development
 
@@ -33,8 +34,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 5. Smoke-test interactions:
    - Open/close the tool window
    - Switch tabs
-   - Click **Reload**
-   - Click **Open External**
+   - Verify a bash terminal appears in each tab
+   - Verify the CLI command auto-runs in that terminal
+   - If CLI is missing, verify website fallback loads
 6. Restart the sandbox IDE and confirm the plugin still loads.
 
 ## Build Plugin ZIP
