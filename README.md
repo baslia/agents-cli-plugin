@@ -10,6 +10,10 @@ Each tab opens a dedicated embedded bash terminal and runs the matching CLI comm
 - `kiro-cli`
 - `claude-code`
 
+Branding assets:
+- Marketplace/logo icon: `src/main/resources/META-INF/pluginIcon.svg` (`pluginIcon_dark.svg` for dark theme)
+- Tool window stripe icon: `src/main/resources/icons/aiClisToolWindow.svg` (`aiClisToolWindow_dark.svg` for dark theme)
+
 If a command is not available, the tab falls back to the assistant website in-app (or to an external browser button when JCEF is unavailable).
 
 ## Run in Development

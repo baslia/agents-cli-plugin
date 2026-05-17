@@ -12,6 +12,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="AI CLIs"
                     anchor="right"
+                    icon="/icons/aiClisToolWindow.svg"
                     factoryClass="com.adelbasli.aiagents.AgentAssistToolWindowFactory"
                     canCloseContents="false"/>
     </extensions>
